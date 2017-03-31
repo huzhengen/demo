@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	.box{
+		width: 1000px;
+		height: 600px;
+		margin: 0 auto;
+	}
+	ul,li{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.box ul li{
+		width: 200px;
+		height: 200px;
+		border:1px solid red;
+		margin: 15px;
+		float: left;
+		position: relative;
+		overflow: hidden;
+	}
+	.box ul li span{
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		background-image: url(images/front.jpg);
+		position: absolute;
+		left:0;top:0;
+		z-index: 33;
+	}
+	.box ul li em{
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		background-image: url(images/back.jpg);
+		position: absolute;
+		left:0;top:0;
+		z-index: 22;
+	}
+	.from-top{
+		animation: from-top 0.5s linear;
+		transform-origin: 0% 0%;
+		z-index: 44!important;
+	}
+	@keyframes from-top{
+		from{
+			transform: rotate(-90deg);
+			z-index: 44!important;
+		}
+		to{
+			transform: rotate(0deg);
+			z-index: 44!important;
+		}
+	}
+	.to-top{
+		animation: to-top 0.5s linear;
+		transform-origin: 0% 0%;
+		z-index: 44;
+	}
+	@keyframes to-top{
+		from{
+			transform: rotate(0deg);
+			z-index: 44;
+		}
+		to{
+			transform: rotate(-90deg);
+			z-index: 44;
+		}
+	}
+
+	.from-bottom{
+		animation: from-bottom 0.5s linear;
+		transform-origin: 0% 100%;
+		z-index: 44!important;
+	}
+	@keyframes from-bottom{
+		from{
+			transform: rotate(90deg);
+			z-index: 44!important;
+		}
+		to{
+			transform: rotate(0deg);
+			z-index: 44!important;
+		}
+	}
+	.to-bottom{
+		animation: to-bottom 0.5s linear;
+		transform-origin: 0% 100%;
+		z-index: 44;
+	}
+	@keyframes to-bottom{
+		from{
+			transform: rotate(0deg);
+			z-index: 44;
+		}
+		to{
+			transform: rotate(90deg);
+			z-index: 44;
+		}
+	}
+
+	.from-left{
+		animation: from-left 0.5s linear;
+		transform-origin: 0% 100%;
+		z-index: 44!important;
+	}
+	@keyframes from-left{
+		from{
+			transform: rotate(-180deg);
+			z-index: 44!important;
+		}
+		to{
+			transform: rotate(0deg);
+			z-index: 44!important;
+		}
+	}
+	.to-left{
+		animation: to-left 0.5s linear;
+		transform-origin: 0% 100%;
+		z-index: 44;
+	}
+	@keyframes to-left{
+		from{
+			transform: rotate(0deg);
+			z-index: 44;
+		}
+		to{
+			transform: rotate(-180deg);
+			z-index: 44;
+		}
+	}
+
+	.from-right{
+		animation: from-right 0.5s linear;
+		transform-origin: 100% 100%;
+		z-index: 44!important;
+	}
+	@keyframes from-right{
+		from{
+			transform: rotate(180deg);
+			z-index: 44!important;
+		}
+		to{
+			transform: rotate(0deg);
+			z-index: 44!important;
+		}
+	}
+	.to-right{
+		animation: to-right 0.5s linear;
+		transform-origin: 100% 100%;
+		z-index: 44;
+	}
+	@keyframes to-right{
+		from{
+			transform: rotate(0deg);
+			z-index: 44;
+		}
+		to{
+			transform: rotate(180deg);
+			z-index: 44;
+		}
+	}
+</style>
+<script>
+window.onload = function(){
+	var box = document.querySelector('.box');
+	var lis = document.querySelectorAll('li');
+	var spans = document.querySelectorAll('span');
+	var ems = document.querySelectorAll('em');
+
+	for(var i=0; i<lis.length; i++){
+		// i = i%4;
+		var x = i%2;
+		var y = parseInt(i/2);
+		spans[i].style.backgroundPosition = x*200 + 'px '+ y*200 +'px';
+		ems[i].style.backgroundPosition = x*200 + 'px '+ y*200 +'px';
+	}
+
+	for (var i = 0; i<lis.length; i++) {
+		lis[i].index = i;
+		lis[i].onmouseenter = function(e){
+			var top = this.offsetTop;
+			var bottom = top + this.clientHeight;
+			var left = this.offsetLeft;
+			var right = left + this.clientWidth;
+			var x = e.pageX;
+			var y = e.pageY;
+			var disTop = Math.abs(y-top);
+			var disBottom = Math.abs(y-bottom);
+			var disLeft = Math.abs(x-left);
+			var disRight = Math.abs(x-right);
+			var min = Math.min(disTop,disBottom,disLeft,disRight);
+			console.log(x,y,top,left);
+			switch(min){
+				case disTop:
+					ems[this.index].className = 'from-top';
+					break;
+				case disBottom:
+					ems[this.index].className = 'from-bottom';
+					break;
+				case disLeft:
+					ems[this.index].className = 'from-left';
+					break;
+				case disRight:
+					ems[this.index].className = 'from-right';
+					break;
+			}
+		}
+		lis[i].onmouseleave = function(e){
+			var top = this.offsetTop;
+			var bottom = top + this.clientHeight;
+			var left = this.offsetLeft;
+			var right = left + this.clientWidth;
+			var x = e.pageX;
+			var y = e.pageY;
+			var disTop = Math.abs(y-top);
+			var disBottom = Math.abs(y-bottom);
+			var disLeft = Math.abs(x-left);
+			var disRight = Math.abs(x-right);
+			var min = Math.min(disTop,disBottom,disLeft,disRight);
+			console.log(x,y,top,left);
+			switch(min){
+				case disTop:
+					ems[this.index].className = 'to-top';
+					break;
+				case disBottom:
+					ems[this.index].className = 'to-bottom';
+					break;
+				case disLeft:
+					ems[this.index].className = 'to-left';
+					break;
+				case disRight:
+					ems[this.index].className = 'to-right';
+					break;
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div class="box">
+	<ul>
+		<li>
+			<span></span>
+			<em></em>
+		</li>
+		<li>
+			<span></span>
+			<em></em>
+		</li>
+		<li>
+			<span></span>
+			<em></em>
+		</li>
+		<li>
+			<span></span>
+			<em></em>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
