@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>音悦台</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="icon" href="http://m.yinyuetai.com/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript">
+setRem();
+window.addEventListener('orientationchange', setRem);
+window.addEventListener('resize', setRem);
+function setRem(){
+	var _html = document.querySelector('html');
+	var _width = _html.getBoundingClientRect().width;
+	_html.style.fontSize = _width / 16 + 'px';
+}
+</script>
+</head>
+<body>
+<section class="wrap">
+	<header class="header">
+		<div class="logo"><a href="javascript:;"><img src="images/logo.png"></a></div>
+		<a href="javascript:;" class="menuBtnShow" id="menuBtn"></a>
+		<nav class="headerRight">
+			<a href="javascript:;">搜索</a>
+			<a href="javascript:;">登陆</a>
+			<a href="javascript:;">注册</a>
+		</nav>
+		<div class="search" id="search">
+			<form>
+				<input type="text" placeholder="请输入搜索内容" name="">
+				<button>搜索</button>
+			</form>
+		</div>
+		<nav class="headerNav" id="headerNav">
+			<ul>
+				<li><a href="javascript:;">首页</a></li>
+				<li><a href="javascript:;">MV</a></li>
+				<li><a href="javascript:;">悦单</a></li>
+				<li><a href="javascript:;">V榜</a></li>
+				<li><a href="javascript:;">音悦</a></li>
+				<li><a href="javascript:;">商城</a></li>
+				<li><a href="javascript:;">节目</a></li>
+				<li><a href="javascript:;">饭团</a></li>
+				<li><a href="javascript:;">资讯</a></li>
+				<li><a href="javascript:;">我的家</a></li>
+				<li><a href="javascript:;">APP下载</a></li>
+				<li><a href="javascript:;">热门应用</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="content">
+		<nav class="subTopBar" id="subTopBar">
+			<ul class="clearfix">
+				<li class="active"><a href="javascript:;">首页</a></li>
+				<li><a href="javascript:;">MV</a></li>
+				<li><a href="javascript:;">悦单</a></li>
+				<li><a href="javascript:;">V榜</a></li>
+				<li><a href="javascript:;">众筹</a></li>
+				<li><a href="javascript:;">商城</a></li>
+				<li><a href="javascript:;">节目</a></li>
+				<li><a href="javascript:;">饭团</a></li>
+				<li><a href="javascript:;">资讯</a></li>
+				<li><a href="javascript:;">我的家</a></li>
+				<li><a href="javascript:;">APP下载</a></li>
+				<li><a href="javascript:;">热门应用</a></li>
+			</ul>
+		</nav>
+		<div class="banner" id="banner">
+			<ul>
+				<li><a href="javascript:;"><img src="images/banner1.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/banner2.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/banner3.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/banner4.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/banner5.jpg"></a></li>
+			</ul>
+			<nav class="bannerNav" id="bannerNav">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</nav>
+		</div>
+		<section class="video clearfix" id="video">
+			<header class="videoHeader">
+				<h2>MV首播</h2>
+				<a href="javascript:;">更多></a>
+			</header>
+			<nav class="videoNav clearfix">
+				<a href="javascript:;">全部</a>
+				<a href="javascript:;">内地</a>
+				<a href="javascript:;">港台</a>
+				<a href="javascript:;">欧美</a>
+				<a href="javascript:;">韩国</a>
+				<a href="javascript:;">日本</a>
+				<span></span>
+			</nav>
+			<section class="videoGroup">
+				<ul class="videoPrev"><img src="images/load24.gif" alt=""></ul>
+				<ul class="videoShow"></ul>
+				<ul class="videoPrev"><img src="images/load24.gif" alt=""></ul>
+			</section>
+		</section>
+		<section class="video clearfix" id="fans">
+			<header class="videoHeader">
+				<h2>粉丝聚焦</h2>
+			</header>
+			<section class="videoGroup">
+				<ul class="videoShow">
+					<li><a href="javascript:;"><img src="images/fans1.jpg" alt=""><span>震惊!李易峰居然是这样的人! 饭制版 </span></a></li>
+					<li><a href="javascript:;"><img src="images/fans2.jpg" alt=""><span>Never Ever - MPD 主有谦 饭拍版</span></a></li>
+					<li><a href="javascript:;"><img src="images/fans3.jpg" alt=""><span>Produce101 REN1分钟自我介绍 中文字幕</span></a></li>
+					<li><a href="javascript:;"><img src="images/fans4.jpg" alt=""><span>爱过青年张艺兴的鸡汤鬼畜 饭制版</span></a></li>
+					<li><a href="javascript:;"><img src="images/fans5.jpg" alt=""><span>王俊凯的欢脱日常 饭制版</span></a></li>
+					<li><a href="javascript:;"><img src="images/fans6.jpg" alt=""><span>南韩仙女裴珠泫美颜安利向 饭制版</span></a></li>
+				</ul>
+			</section>
+		</section>
+		<section class="video clearfix" id="like">
+			<header class="videoHeader">
+				<h2>猜你喜欢</h2>
+			</header>
+			<section class="videoGroup">
+				<ul class="videoShow">
+					<li><a href="javascript:;"><img src="images/like1.png" alt=""><span>Fine  完整版</span></a></li>
+					<li><a href="javascript:;"><img src="images/like2.jpg" alt=""><span>V榜TOP10 第10期</span></a></li>
+					<li><a href="javascript:;"><img src="images/like3.jpg" alt=""><span>AFTERGLOW</span></a></li>
+					<li><a href="javascript:;"><img src="images/like4.jpg" alt=""><span>V榜TOP10 第9期</span></a></li>
+					<li><a href="javascript:;"><img src="images/like5.jpg" alt=""><span>FINGERTIP 完整版</span></a></li>
+					<li><a href="javascript:;"><img src="images/like6.jpg" alt=""><span>敢(Roleplay) 舞蹈版</span></a></li>
+				</ul>
+			</section>
+		</section>
+		<section class="video clearfix" id="fans">
+			<header class="videoHeader">
+				<h2>热门应用</h2>
+				<a href="javascript:;">更多></a>
+			</header>
+		</section>
+		<footer class="footer">Copyright © 2016 yinyuetai.com</footer>
+	</div>
+</section>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
