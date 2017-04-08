@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	ul,li{
+		margin: 0;
+		padding:0;
+		list-style: none;
+	}
+	.clearfix:after{
+		content: "";
+		clear: both;
+		height: 0;
+		visibility: hidden;
+		display: block;
+	}
+	li{
+		float: left;
+		margin: 20px;
+		border: 1px solid #ccc;
+		text-align: center;
+		padding: 10px;
+		cursor: pointer;
+	}
+	img{
+
+	}
+	.cart{
+		width: 600px;
+		min-height: 50px;
+		border: 1px solid #ccc;
+		clear: both;
+		margin-top: 20px;
+	}
+	.cart div{
+		border-bottom: 1px solid #ccc;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	.cart em,span,i{
+		width: 200px;
+		text-align: center;
+		display: inline-block;
+		float: left;
+	}
+	.totalPrice{
+		text-align: right!important;
+		padding-right: 20px!important;
+	}
+</style>
+</head>
+<body>
+<ul class="clearfix">
+	<li draggable="true">
+		<img src="images/surfaceS1.jpg" alt="">
+		<p>surface1</p>
+		<p>111元</p>
+	</li>
+	<li draggable="true">
+		<img src="images/surfaceS2.jpg" alt="">
+		<p>surface2</p>
+		<p>222元</p>
+	</li>
+	<li draggable="true">
+		<img src="images/surfaceS3.jpg" alt="">
+		<p>surface3</p>
+		<p>333元</p>
+	</li>
+</ul>
+
+<div class="cart clearfix">
+	<div class="clearfix">拖放加入购物车</div>
+	<div class="clearfix">
+		<span>title</span>
+		<i>price</i>
+		<em>数量</em>
+	</div>
+</div>
+
+
+<script src="js/index.js"></script>
+</body>
+</html>
