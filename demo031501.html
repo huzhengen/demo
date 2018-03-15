@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo0315</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+
+
+<script>
+	var canvas = document.querySelector('#canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.lineWidth = 30;
+	ctx.font = '60px SimHei';
+
+	var start = -90;
+	var end = -90;
+
+	var timer = setInterval(function(){
+		ctx.clearRect(0,0,500,500);
+		end += 3;
+		ctx.beginPath();
+		ctx.arc(250,250,100,start*Math.PI/180,end*Math.PI/180);
+		if(end-start < 120){
+			ctx.strokeStyle = 'red';
+			ctx.fillStyle = 'red';
+		}else if(end-start < 240){
+			ctx.strokeStyle = 'orange';
+			ctx.fillStyle = 'orange';
+		}else{
+			ctx.strokeStyle = 'green';
+			ctx.fillStyle = 'green';
+		}
+		ctx.stroke();
+
+		var percentage = Math.floor((end-start)/360*100) + '%';
+		var txtWidth = ctx.measureText(percentage).width;
+		ctx.fillText(percentage,250-txtWidth/2,250+20);
+
+		if(end >= 270){
+			clearInterval(timer);
+		}
+	}, 200)
+</script>
+</body>
+</html>
