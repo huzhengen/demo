@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo031502</title>
+</head>
+<body>
+<canvas id="canvas" width="450" height="450" style="border:1px solid #ddd"></canvas>
+
+
+
+<script>
+	var canvas = document.querySelector('#canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.translate(225,225);
+
+	draw();
+
+	function draw(){
+		ctx.beginPath();
+		ctx.arc(0,0,200,0,2*Math.PI);
+		ctx.stroke();
+
+		for(let i=0; i<60; i++){
+			ctx.beginPath();
+			ctx.moveTo(0,200);
+			ctx.lineTo(0,190);
+			ctx.rotate(6*Math.PI/180);
+			ctx.stroke();
+		}
+
+		ctx.beginPath();
+		ctx.moveTo(0, -150);
+		ctx.lineTo(0,0);
+		ctx.stroke();
+	}
+
+</script>
+</body>
+</html>
